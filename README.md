@@ -1,4 +1,4 @@
-# 🔗 GitHub Repository
+**GitHub Repository**
 https://github.com/KubilayADA/ForwardSearch-ReasoningInAI
 
 # 🔍 Project Overview - Forward Search - Bonus Task for SE_14 Assessment 
@@ -8,9 +8,9 @@ A Python project implementing **Forward Search** and **Model Checking** algorith
 This project is part of the **SE_14 Artificial Intelligence Basics** assessment at CODE University. The task involves implementing and comparing two algorithms—**Forward Search** and **Model Checking**—for solving propositional logic problems. The goal of the project is to demonstrate how both algorithms work on different logical problems, compare their results and performance, and learn to handle logical reasoning in the context of AI.
 ---
 
-# 📁 Repository Structure
+## 📁 Repository Structure
 
-
+```bash
 Forward Search - Homework/
 ├── logic/                     # Contains logic-related classes 
 │   ├── biconditional.py       # Biconditional logic implementation
@@ -25,6 +25,7 @@ Forward Search - Homework/
 │   ├── model_check.py         # Model checking algorithm implementation
 ├── main.py                    # Main script to test and compare algorithms
 ├── README.md                  # Documentation for the project
+```
 
 **Explanation of the Project Structure:**
 - The `logic/` directory contains the logic classes that represent propositional logical expressions.
@@ -33,7 +34,7 @@ Forward Search - Homework/
     **model_check.py:** Implements the model checking algorithm,  which checks all possible models to evaluate the truth of a given query.
 - The `main.py` script that ties eveything together and runs tests for both Forward Search and Model Checking algorithms on predefined logic problems. 
 
-# How to Start the System 
+## How to Start the System 
 
 **1. Prerequisites**
 
@@ -56,7 +57,7 @@ python3 main.py
 ```
 This will trigger the testing process and display the results for each problem.
 
-# Expected Output
+## Expected Output
 - For each problem, the program will display:
 The result of the model_check and forward_search algorithms.
 The execution time for both algorithms in nanoseconds.
@@ -74,7 +75,7 @@ The execution time for both algorithms in nanoseconds.
 - time for forward search: 192000 ns
 ```
 
-# Explanation of the Algorithms
+## Explanation of the Algorithms
 **Model  Checking:**
 - Definition: Works by systematically checking all possible logical models (truth assignments).
 - Goal: Determine whether a specific query is logically entailed by the knowledge base.
