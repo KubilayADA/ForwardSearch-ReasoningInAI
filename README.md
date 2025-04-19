@@ -6,7 +6,7 @@ https://github.com/KubilayADA/ForwardSearch-ReasoningInAI
 A Python project implementing **Forward Search** and **Model Checking** algorithms for reasoning in propositional logic. The project is designed to evaluate logical sentences and check whether a query can be proven true or false based on a knowledge base of logical formulas.
 
 This project is part of the **SE_14 Artificial Intelligence Basics** assessment at CODE University. The task involves implementing and comparing two algorithms—**Forward Search** and **Model Checking**—for solving propositional logic problems. The goal of the project is to demonstrate how both algorithms work on different logical problems, compare their results and performance, and learn to handle logical reasoning in the context of AI.
----
+
 
 ## 📁 Repository Structure
 
