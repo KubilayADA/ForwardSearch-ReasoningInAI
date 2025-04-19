@@ -1,42 +1,86 @@
-<h1 align=center><strong>Forward Search Homework</strong></h1>
+# 🔗 GitHub Repository
+https://github.com/KubilayADA/ForwardSearch-ReasoningInAI
 
-In this exercise you will implement a Forward Search algorithm and compare it against model checking.
+# 🔍 Project Overview - Forward Search - Bonus Task for SE_14 Assessment 
 
+A Python project implementing **Forward Search** and **Model Checking** algorithms for reasoning in propositional logic. The project is designed to evaluate logical sentences and check whether a query can be proven true or false based on a knowledge base of logical formulas.
 
-# Credit:
-The implementation of propositional logic is to a large extent based on the content of the course CS50: Introduction to Computer Science (https://pll.harvard.edu/course/cs50-introduction-computer-science) 
+This project is part of the **SE_14 Artificial Intelligence Basics** assessment at CODE University. The task involves implementing and comparing two algorithms—**Forward Search** and **Model Checking**—for solving propositional logic problems. The goal of the project is to demonstrate how both algorithms work on different logical problems, compare their results and performance, and learn to handle logical reasoning in the context of AI.
+---
 
-
-# Setup
-This project does not require additional dependencies beyond what's included in a standard Python installation.
-
-# How to run?
-You start the program by starting main.py
-The script does not require additional arguments.
-
-# Your Task
-
-Your task is to implement the method *forward_search* in *solvers/forward_search.py*. This method should implement a forward search algorithm. It takes two arguments:
-- knowledge: the knowledge base. This is an And-connected formula that describes all you know to be true. 
-- query: the query you want to proof.
-
-The algorithm should return ...
-- True if the query can be proven from the knowledge
-- False if Not(query) can be provem fron the knowledge
-- None else.
+# 📁 Repository Structure
 
 
-For this implementation, the following convenience methods have already been implemented:
-- check_proven checks whether the query is currently already proven in the current state of the knowledge base.
-- get_inferrable_knowledge takes the knowledge base and returns a list of all logical sentences that can be inferred. Inference is done by looking at all Implication and Biconditional statements within the knowledge base.
+Forward Search - Homework/
+├── logic/                     # Contains logic-related classes 
+│   ├── biconditional.py       # Biconditional logic implementation
+│   ├── conjunction.py         # Conjunction (AND) logic implementation
+│   ├── disjunction.py         # Disjunction (OR) logic implementation
+│   ├── implication.py         # Implication logic implementation
+│   ├── negation.py            # Negation logic implementation
+│   ├── sentence.py            # Base class for all logical sentences
+│   ├── symbol.py              # Symbol class for propositional logic
+├── solvers/                   # Contains reasoning algorithms
+│   ├── forward_search.py      # Forward search algorithm implementation
+│   ├── model_check.py         # Model checking algorithm implementation
+├── main.py                    # Main script to test and compare algorithms
+├── README.md                  # Documentation for the project
 
-The script *main.py* compares your algoirthm against the model checker from the knights and knaves task (slightly adapted to fit the task specification here). It compares the result and the run time based on a number of different problems.
+**Explanation of the Project Structure:**
+- The `logic/` directory contains the logic classes that represent propositional logical expressions.
+- The `solvers/` directory contains the solvers that implementing the reasoining algorithms.
+    **forward_search.py:** Implements the forward search algorithm, which uses a knowledge base to infer new facts until a query is proven or disproven.
+    **model_check.py:** Implements the model checking algorithm,  which checks all possible models to evaluate the truth of a given query.
+- The `main.py` script that ties eveything together and runs tests for both Forward Search and Model Checking algorithms on predefined logic problems. 
 
-A few tips:
-- Test Problem 2 is more complex than the others. It's a good case study to get an impression of the time complexity of your algorithm compared to model checking. Your algorithm should be a lot faster than model checking on this test case. Do you understand why?
-- Your algorithm should have the same result as model checking in Test Problem 1 to 4.
-- Your algorithm will likely not be able to solve Test Problem 5 (meaning it will return None rather than the correct result). Can you find out why? 
+# How to Start the System 
 
-# Relation to Assessments
+**1. Prerequisites**
 
-Solving this task can be used as basis for showing specific knowledge in Reasoning for an assessment in module *SE_14 Artificial Intelligence Basics*.
+Please ensure you have Python 3.x installed on your system.
+
+> No external dependencies are needed. The project use only standard Python libraries.
+
+**2. Installation**
+Clone the repository:
+If you havent cloned the repository yet, you can do so by running following command:
+```bash
+git clone https://github.com/KubilayADA/ForwardSearch-ReasoningInAI.git
+cd forward_search-reasoning-in-ai
+```
+**3. Running the Program**
+
+To run the program, execute the main.py script. It will run both Forward Search and Model Checking algorithms on a series of predefined problems:
+```bash
+python3 main.py
+```
+This will trigger the testing process and display the results for each problem.
+
+# Expected Output
+- For each problem, the program will display:
+The result of the model_check and forward_search algorithms.
+The execution time for both algorithms in nanoseconds.
+
+ **Example Output (Problem 1)**
+ ```bash
+ Testing Problem 1
+... running model checking
+... running forward search
+... done. 
+
+- result - model checking:  True
+- result - forward search:  True
+- time for model checking: 127000 ns
+- time for forward search: 192000 ns
+```
+
+# Explanation of the Algorithms
+**Model  Checking:**
+- Definition: Works by systematically checking all possible logical models (truth assignments).
+- Goal: Determine whether a specific query is logically entailed by the knowledge base.
+
+**Forward Search:**
+- Definition:Starts with a knowledge base and attempts to infer new facts.
+- Goal: Derive new information using inference rules until the query is proven or disproven.
+
+
