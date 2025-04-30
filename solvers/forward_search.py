@@ -74,7 +74,7 @@ def forward_search(knowledge, query):
     # Best practice: copy the knowledge base so we don't accidentally modify an input parameter.
     knowledge_base = deepcopy(knowledge)
 
-    #step2: I loop until no new knowlendge.
+    #step2: I loop until no new knowledge.
     result = check_proven(knowledge_base, query)
     if result is not None:
         return result
