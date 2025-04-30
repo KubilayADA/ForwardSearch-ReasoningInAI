@@ -75,23 +75,33 @@ def forward_search(knowledge, query):
     knowledge_base = deepcopy(knowledge)
 
     #step2: I loop until no new knowlendge.
-    while True:
-        #step2a: I Check if query in knowledge base.
-        result = check_proven(knowledge_base, query)
-        if result is not None:
-            return result
-        
-        #step2b: Infer new 
-        new_knowledge = get_inferrable_knowledge(knowledge_base)
+    result = check_proven(knowledge_base, query)
+    if result is not None:
+        return result
+    
+    inferred = set()
 
-        #step2c: If no new knowledge,stop loop.
+    while True:
+        #step2a: Get new knowledge. 
+        new_knowledge = get_inferrable_knowledge(knowledge_base)
+    
+        # If no new knowledge can be inferred, return None
         if not new_knowledge:
             return None
-        
-        #step2d: Add new knowledge to knowledge base.
-        for sentence in new_knowledge:
-            if not is_in(knowledge_base, sentence):
-                knowledge_base.add(sentence)
+        #step2b: Add new knowledge to knowledge base
+        for  new_fact in new_knowledge: 
+            #skip if already in knowledge base
+            if new_fact in inferred:
+                continue
+
+            #Add to knowledge base
+            knowledge_base.conjuncts.append(new_fact)
+            inferred.add(new_fact)
+
+            #check if new knowledge proves or disproves the query
+            result = check_proven(knowledge_base, query)
+            if result is not None:
+                return result
 
 
     
